@@ -1,0 +1,3241 @@
+{
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "DelegateForAll",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "contract_",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "DelegateForContract",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "contract_",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "DelegateForToken",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				}
+			],
+			"name": "RevokeAllDelegates",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "RevokeDelegate",
+			"type": "event"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				}
+			],
+			"name": "checkDelegateForAll",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "contract_",
+					"type": "address"
+				}
+			],
+			"name": "checkDelegateForContract",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "contract_",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "checkDelegateForToken",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "delegateForAll",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "contract_",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "delegateForContract",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "contract_",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "value",
+					"type": "bool"
+				}
+			],
+			"name": "delegateForToken",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				}
+			],
+			"name": "getDelegatesForAll",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "contract_",
+					"type": "address"
+				}
+			],
+			"name": "getDelegatesForContract",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "contract_",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "getDelegatesForToken",
+			"outputs": [
+				{
+					"internalType": "address[]",
+					"name": "",
+					"type": "address[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "getDelegationsByDelegate",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "enum IDelegationRegistry.DelegationType",
+							"name": "type_",
+							"type": "uint8"
+						},
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct IDelegationRegistry.DelegationInfo[]",
+					"name": "",
+					"type": "tuple[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "revokeAllDelegates",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "delegate",
+					"type": "address"
+				}
+			],
+			"name": "revokeDelegate",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "vault",
+					"type": "address"
+				}
+			],
+			"name": "revokeSelf",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	],
+	"bytecode": {
+		"object": "0x",
+		"sourceMap": "",
+		"linkReferences": {}
+	},
+	"deployedBytecode": {
+		"object": "0x",
+		"sourceMap": "",
+		"linkReferences": {}
+	},
+	"methodIdentifiers": {
+		"checkDelegateForAll(address,address)": "9c395bc2",
+		"checkDelegateForContract(address,address,address)": "90c9a2d0",
+		"checkDelegateForToken(address,address,address,uint256)": "aba69cf8",
+		"delegateForAll(address,bool)": "685ee3e8",
+		"delegateForContract(address,address,bool)": "49c95d29",
+		"delegateForToken(address,address,uint256,bool)": "537a5c3d",
+		"getDelegatesForAll(address)": "1b61f675",
+		"getDelegatesForContract(address,address)": "ed4b878e",
+		"getDelegatesForToken(address,address,uint256)": "1221156b",
+		"getDelegationsByDelegate(address)": "4fc69282",
+		"revokeAllDelegates()": "36137872",
+		"revokeDelegate(address)": "fa352c00",
+		"revokeSelf(address)": "219044b0"
+	},
+	"rawMetadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"name\":\"DelegateForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"name\":\"DelegateForContract\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"name\":\"DelegateForToken\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"}],\"name\":\"RevokeAllDelegates\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"}],\"name\":\"RevokeDelegate\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"}],\"name\":\"checkDelegateForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"}],\"name\":\"checkDelegateForContract\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"checkDelegateForToken\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"name\":\"delegateForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"name\":\"delegateForContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"name\":\"delegateForToken\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"}],\"name\":\"getDelegatesForAll\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"}],\"name\":\"getDelegatesForContract\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getDelegatesForToken\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"}],\"name\":\"getDelegationsByDelegate\",\"outputs\":[{\"components\":[{\"internalType\":\"enum IDelegationRegistry.DelegationType\",\"name\":\"type_\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"contract_\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"internalType\":\"struct IDelegationRegistry.DelegationInfo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"revokeAllDelegates\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"delegate\",\"type\":\"address\"}],\"name\":\"revokeDelegate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vault\",\"type\":\"address\"}],\"name\":\"revokeSelf\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"New project launches can read previous cold wallet -> hot wallet delegations  from here and integrate those permissions into their flow\",\"kind\":\"dev\",\"methods\":{\"checkDelegateForAll(address,address)\":{\"params\":{\"delegate\":\"The hotwallet to act on your behalf\",\"vault\":\"The cold wallet who issued the delegation\"}},\"checkDelegateForContract(address,address,address)\":{\"params\":{\"contract_\":\"The address for the contract you're delegating\",\"delegate\":\"The hotwallet to act on your behalf\",\"vault\":\"The cold wallet who issued the delegation\"}},\"checkDelegateForToken(address,address,address,uint256)\":{\"params\":{\"contract_\":\"The address for the contract you're delegating\",\"delegate\":\"The hotwallet to act on your behalf\",\"tokenId\":\"The token id for the token you're delegating\",\"vault\":\"The cold wallet who issued the delegation\"}},\"delegateForAll(address,bool)\":{\"params\":{\"delegate\":\"The hotwallet to act on your behalf\",\"value\":\"Whether to enable or disable delegation for this address, true for setting and false for revoking\"}},\"delegateForContract(address,address,bool)\":{\"params\":{\"contract_\":\"The address for the contract you're delegating\",\"delegate\":\"The hotwallet to act on your behalf\",\"value\":\"Whether to enable or disable delegation for this address, true for setting and false for revoking\"}},\"delegateForToken(address,address,uint256,bool)\":{\"params\":{\"contract_\":\"The address for the contract you're delegating\",\"delegate\":\"The hotwallet to act on your behalf\",\"tokenId\":\"The token id for the token you're delegating\",\"value\":\"Whether to enable or disable delegation for this address, true for setting and false for revoking\"}},\"getDelegatesForAll(address)\":{\"params\":{\"vault\":\"The cold wallet who issued the delegation\"},\"returns\":{\"_0\":\"addresses Array of wallet-level delegates for a given vault\"}},\"getDelegatesForContract(address,address)\":{\"params\":{\"contract_\":\"The address for the contract you're delegating\",\"vault\":\"The cold wallet who issued the delegation\"},\"returns\":{\"_0\":\"addresses Array of contract-level delegates for a given vault and contract\"}},\"getDelegatesForToken(address,address,uint256)\":{\"params\":{\"contract_\":\"The address for the contract holding the token\",\"tokenId\":\"The token id for the token you're delegating\",\"vault\":\"The cold wallet who issued the delegation\"},\"returns\":{\"_0\":\"addresses Array of contract-level delegates for a given vault's token\"}},\"getDelegationsByDelegate(address)\":{\"params\":{\"delegate\":\"The delegate that you would like to retrieve delegations for\"},\"returns\":{\"_0\":\"info Array of DelegationInfo structs\"}},\"revokeDelegate(address)\":{\"params\":{\"delegate\":\"The hotwallet to revoke\"}},\"revokeSelf(address)\":{\"params\":{\"vault\":\"The vault which delegated to the msg.sender, and should be removed\"}}},\"title\":\"An immutable registry contract to be deployed as a standalone primitive\",\"version\":1},\"userdoc\":{\"events\":{\"DelegateForAll(address,address,bool)\":{\"notice\":\"Emitted when a user delegates their entire wallet\"},\"DelegateForContract(address,address,address,bool)\":{\"notice\":\"Emitted when a user delegates a specific contract\"},\"DelegateForToken(address,address,address,uint256,bool)\":{\"notice\":\"Emitted when a user delegates a specific token\"},\"RevokeAllDelegates(address)\":{\"notice\":\"Emitted when a user revokes all delegations\"},\"RevokeDelegate(address,address)\":{\"notice\":\"Emitted when a user revoes all delegations for a given delegate\"}},\"kind\":\"user\",\"methods\":{\"checkDelegateForAll(address,address)\":{\"notice\":\"Returns true if the address is delegated to act on your behalf for all tokens\"},\"checkDelegateForContract(address,address,address)\":{\"notice\":\"Returns true if the address is delegated to act on your behalf for a token contract\"},\"checkDelegateForToken(address,address,address,uint256)\":{\"notice\":\"Returns true if the address is delegated to act on your behalf for an specific token\"},\"delegateForAll(address,bool)\":{\"notice\":\"Allow the delegate to act on your behalf for all contracts\"},\"delegateForContract(address,address,bool)\":{\"notice\":\"Allow the delegate to act on your behalf for a specific contract\"},\"delegateForToken(address,address,uint256,bool)\":{\"notice\":\"Allow the delegate to act on your behalf for a specific token, supports 721 and 1155\"},\"getDelegatesForAll(address)\":{\"notice\":\"Returns an array of wallet-level delegates for a given vault\"},\"getDelegatesForContract(address,address)\":{\"notice\":\"Returns an array of contract-level delegates for a given vault and contract\"},\"getDelegatesForToken(address,address,uint256)\":{\"notice\":\"Returns an array of contract-level delegates for a given vault's token\"},\"getDelegationsByDelegate(address)\":{\"notice\":\"Returns all active delegations a given delegate is able to claim on behalf of\"},\"revokeAllDelegates()\":{\"notice\":\"Revoke all delegates\"},\"revokeDelegate(address)\":{\"notice\":\"Revoke a specific delegate for all their permissions\"},\"revokeSelf(address)\":{\"notice\":\"Remove yourself as a delegate for a specific vault\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/IDelegationRegistry.sol\":\"IDelegationRegistry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/IDelegationRegistry.sol\":{\"keccak256\":\"0x3894eefb518d143c890c9989609144c4a7916a9b30dab02a6bf3b6ce2a86fe5e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://34a72b59fdbb75516035434dc4797ced33d505b5ede558cfe93a9293fa4de977\",\"dweb:/ipfs/QmSAkfuCNts3VuxtRpiujdj9rwd75451WT7b4Pjujr8jjW\"]}},\"version\":1}",
+	"metadata": {
+		"compiler": {
+			"version": "0.8.16+commit.07a7930e"
+		},
+		"language": "Solidity",
+		"output": {
+			"abi": [
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "bool",
+							"name": "value",
+							"type": "bool",
+							"indexed": false
+						}
+					],
+					"type": "event",
+					"name": "DelegateForAll",
+					"anonymous": false
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "bool",
+							"name": "value",
+							"type": "bool",
+							"indexed": false
+						}
+					],
+					"type": "event",
+					"name": "DelegateForContract",
+					"anonymous": false
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256",
+							"indexed": false
+						},
+						{
+							"internalType": "bool",
+							"name": "value",
+							"type": "bool",
+							"indexed": false
+						}
+					],
+					"type": "event",
+					"name": "DelegateForToken",
+					"anonymous": false
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address",
+							"indexed": false
+						}
+					],
+					"type": "event",
+					"name": "RevokeAllDelegates",
+					"anonymous": false
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address",
+							"indexed": false
+						},
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address",
+							"indexed": false
+						}
+					],
+					"type": "event",
+					"name": "RevokeDelegate",
+					"anonymous": false
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address"
+						}
+					],
+					"stateMutability": "view",
+					"type": "function",
+					"name": "checkDelegateForAll",
+					"outputs": [
+						{
+							"internalType": "bool",
+							"name": "",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address"
+						}
+					],
+					"stateMutability": "view",
+					"type": "function",
+					"name": "checkDelegateForContract",
+					"outputs": [
+						{
+							"internalType": "bool",
+							"name": "",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256"
+						}
+					],
+					"stateMutability": "view",
+					"type": "function",
+					"name": "checkDelegateForToken",
+					"outputs": [
+						{
+							"internalType": "bool",
+							"name": "",
+							"type": "bool"
+						}
+					]
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address"
+						},
+						{
+							"internalType": "bool",
+							"name": "value",
+							"type": "bool"
+						}
+					],
+					"stateMutability": "nonpayable",
+					"type": "function",
+					"name": "delegateForAll"
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address"
+						},
+						{
+							"internalType": "bool",
+							"name": "value",
+							"type": "bool"
+						}
+					],
+					"stateMutability": "nonpayable",
+					"type": "function",
+					"name": "delegateForContract"
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "bool",
+							"name": "value",
+							"type": "bool"
+						}
+					],
+					"stateMutability": "nonpayable",
+					"type": "function",
+					"name": "delegateForToken"
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address"
+						}
+					],
+					"stateMutability": "view",
+					"type": "function",
+					"name": "getDelegatesForAll",
+					"outputs": [
+						{
+							"internalType": "address[]",
+							"name": "",
+							"type": "address[]"
+						}
+					]
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address"
+						}
+					],
+					"stateMutability": "view",
+					"type": "function",
+					"name": "getDelegatesForContract",
+					"outputs": [
+						{
+							"internalType": "address[]",
+							"name": "",
+							"type": "address[]"
+						}
+					]
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address"
+						},
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "tokenId",
+							"type": "uint256"
+						}
+					],
+					"stateMutability": "view",
+					"type": "function",
+					"name": "getDelegatesForToken",
+					"outputs": [
+						{
+							"internalType": "address[]",
+							"name": "",
+							"type": "address[]"
+						}
+					]
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address"
+						}
+					],
+					"stateMutability": "view",
+					"type": "function",
+					"name": "getDelegationsByDelegate",
+					"outputs": [
+						{
+							"internalType": "struct IDelegationRegistry.DelegationInfo[]",
+							"name": "",
+							"type": "tuple[]",
+							"components": [
+								{
+									"internalType": "enum IDelegationRegistry.DelegationType",
+									"name": "type_",
+									"type": "uint8"
+								},
+								{
+									"internalType": "address",
+									"name": "vault",
+									"type": "address"
+								},
+								{
+									"internalType": "address",
+									"name": "contract_",
+									"type": "address"
+								},
+								{
+									"internalType": "uint256",
+									"name": "tokenId",
+									"type": "uint256"
+								}
+							]
+						}
+					]
+				},
+				{
+					"inputs": [],
+					"stateMutability": "nonpayable",
+					"type": "function",
+					"name": "revokeAllDelegates"
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "delegate",
+							"type": "address"
+						}
+					],
+					"stateMutability": "nonpayable",
+					"type": "function",
+					"name": "revokeDelegate"
+				},
+				{
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "vault",
+							"type": "address"
+						}
+					],
+					"stateMutability": "nonpayable",
+					"type": "function",
+					"name": "revokeSelf"
+				}
+			],
+			"devdoc": {
+				"kind": "dev",
+				"methods": {
+					"checkDelegateForAll(address,address)": {
+						"params": {
+							"delegate": "The hotwallet to act on your behalf",
+							"vault": "The cold wallet who issued the delegation"
+						}
+					},
+					"checkDelegateForContract(address,address,address)": {
+						"params": {
+							"contract_": "The address for the contract you're delegating",
+							"delegate": "The hotwallet to act on your behalf",
+							"vault": "The cold wallet who issued the delegation"
+						}
+					},
+					"checkDelegateForToken(address,address,address,uint256)": {
+						"params": {
+							"contract_": "The address for the contract you're delegating",
+							"delegate": "The hotwallet to act on your behalf",
+							"tokenId": "The token id for the token you're delegating",
+							"vault": "The cold wallet who issued the delegation"
+						}
+					},
+					"delegateForAll(address,bool)": {
+						"params": {
+							"delegate": "The hotwallet to act on your behalf",
+							"value": "Whether to enable or disable delegation for this address, true for setting and false for revoking"
+						}
+					},
+					"delegateForContract(address,address,bool)": {
+						"params": {
+							"contract_": "The address for the contract you're delegating",
+							"delegate": "The hotwallet to act on your behalf",
+							"value": "Whether to enable or disable delegation for this address, true for setting and false for revoking"
+						}
+					},
+					"delegateForToken(address,address,uint256,bool)": {
+						"params": {
+							"contract_": "The address for the contract you're delegating",
+							"delegate": "The hotwallet to act on your behalf",
+							"tokenId": "The token id for the token you're delegating",
+							"value": "Whether to enable or disable delegation for this address, true for setting and false for revoking"
+						}
+					},
+					"getDelegatesForAll(address)": {
+						"params": {
+							"vault": "The cold wallet who issued the delegation"
+						},
+						"returns": {
+							"_0": "addresses Array of wallet-level delegates for a given vault"
+						}
+					},
+					"getDelegatesForContract(address,address)": {
+						"params": {
+							"contract_": "The address for the contract you're delegating",
+							"vault": "The cold wallet who issued the delegation"
+						},
+						"returns": {
+							"_0": "addresses Array of contract-level delegates for a given vault and contract"
+						}
+					},
+					"getDelegatesForToken(address,address,uint256)": {
+						"params": {
+							"contract_": "The address for the contract holding the token",
+							"tokenId": "The token id for the token you're delegating",
+							"vault": "The cold wallet who issued the delegation"
+						},
+						"returns": {
+							"_0": "addresses Array of contract-level delegates for a given vault's token"
+						}
+					},
+					"getDelegationsByDelegate(address)": {
+						"params": {
+							"delegate": "The delegate that you would like to retrieve delegations for"
+						},
+						"returns": {
+							"_0": "info Array of DelegationInfo structs"
+						}
+					},
+					"revokeDelegate(address)": {
+						"params": {
+							"delegate": "The hotwallet to revoke"
+						}
+					},
+					"revokeSelf(address)": {
+						"params": {
+							"vault": "The vault which delegated to the msg.sender, and should be removed"
+						}
+					}
+				},
+				"version": 1
+			},
+			"userdoc": {
+				"kind": "user",
+				"methods": {
+					"checkDelegateForAll(address,address)": {
+						"notice": "Returns true if the address is delegated to act on your behalf for all tokens"
+					},
+					"checkDelegateForContract(address,address,address)": {
+						"notice": "Returns true if the address is delegated to act on your behalf for a token contract"
+					},
+					"checkDelegateForToken(address,address,address,uint256)": {
+						"notice": "Returns true if the address is delegated to act on your behalf for an specific token"
+					},
+					"delegateForAll(address,bool)": {
+						"notice": "Allow the delegate to act on your behalf for all contracts"
+					},
+					"delegateForContract(address,address,bool)": {
+						"notice": "Allow the delegate to act on your behalf for a specific contract"
+					},
+					"delegateForToken(address,address,uint256,bool)": {
+						"notice": "Allow the delegate to act on your behalf for a specific token, supports 721 and 1155"
+					},
+					"getDelegatesForAll(address)": {
+						"notice": "Returns an array of wallet-level delegates for a given vault"
+					},
+					"getDelegatesForContract(address,address)": {
+						"notice": "Returns an array of contract-level delegates for a given vault and contract"
+					},
+					"getDelegatesForToken(address,address,uint256)": {
+						"notice": "Returns an array of contract-level delegates for a given vault's token"
+					},
+					"getDelegationsByDelegate(address)": {
+						"notice": "Returns all active delegations a given delegate is able to claim on behalf of"
+					},
+					"revokeAllDelegates()": {
+						"notice": "Revoke all delegates"
+					},
+					"revokeDelegate(address)": {
+						"notice": "Revoke a specific delegate for all their permissions"
+					},
+					"revokeSelf(address)": {
+						"notice": "Remove yourself as a delegate for a specific vault"
+					}
+				},
+				"version": 1
+			}
+		},
+		"settings": {
+			"remappings": [
+				":ds-test/=lib/forge-std/lib/ds-test/src/",
+				":forge-std/=lib/forge-std/src/",
+				":openzeppelin-contracts/=lib/openzeppelin-contracts/"
+			],
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"metadata": {
+				"bytecodeHash": "ipfs"
+			},
+			"compilationTarget": {
+				"src/IDelegationRegistry.sol": "IDelegationRegistry"
+			},
+			"libraries": {}
+		},
+		"sources": {
+			"src/IDelegationRegistry.sol": {
+				"keccak256": "0x3894eefb518d143c890c9989609144c4a7916a9b30dab02a6bf3b6ce2a86fe5e",
+				"urls": [
+					"bzz-raw://34a72b59fdbb75516035434dc4797ced33d505b5ede558cfe93a9293fa4de977",
+					"dweb:/ipfs/QmSAkfuCNts3VuxtRpiujdj9rwd75451WT7b4Pjujr8jjW"
+				],
+				"license": "MIT"
+			}
+		},
+		"version": 1
+	},
+	"ast": {
+		"absolutePath": "src/IDelegationRegistry.sol",
+		"id": 23485,
+		"exportedSymbols": {
+			"IDelegationRegistry": [23484]
+		},
+		"nodeType": "SourceUnit",
+		"src": "32:6170:11",
+		"nodes": [
+			{
+				"id": 23297,
+				"nodeType": "PragmaDirective",
+				"src": "32:24:11",
+				"literals": ["solidity", "^", "0.8", ".16"]
+			},
+			{
+				"id": 23484,
+				"nodeType": "ContractDefinition",
+				"src": "300:5901:11",
+				"nodes": [
+					{
+						"id": 23303,
+						"nodeType": "EnumDefinition",
+						"src": "369:86:11",
+						"canonicalName": "IDelegationRegistry.DelegationType",
+						"members": [
+							{
+								"id": 23299,
+								"name": "NONE",
+								"nameLocation": "399:4:11",
+								"nodeType": "EnumValue",
+								"src": "399:4:11"
+							},
+							{
+								"id": 23300,
+								"name": "ALL",
+								"nameLocation": "413:3:11",
+								"nodeType": "EnumValue",
+								"src": "413:3:11"
+							},
+							{
+								"id": 23301,
+								"name": "CONTRACT",
+								"nameLocation": "426:8:11",
+								"nodeType": "EnumValue",
+								"src": "426:8:11"
+							},
+							{
+								"id": 23302,
+								"name": "TOKEN",
+								"nameLocation": "444:5:11",
+								"nodeType": "EnumValue",
+								"src": "444:5:11"
+							}
+						],
+						"name": "DelegationType",
+						"nameLocation": "374:14:11"
+					},
+					{
+						"id": 23313,
+						"nodeType": "StructDefinition",
+						"src": "538:134:11",
+						"canonicalName": "IDelegationRegistry.DelegationInfo",
+						"members": [
+							{
+								"constant": false,
+								"id": 23306,
+								"mutability": "mutable",
+								"name": "type_",
+								"nameLocation": "585:5:11",
+								"nodeType": "VariableDeclaration",
+								"scope": 23313,
+								"src": "570:20:11",
+								"stateVariable": false,
+								"storageLocation": "default",
+								"typeDescriptions": {
+									"typeIdentifier": "t_enum$_DelegationType_$23303",
+									"typeString": "enum IDelegationRegistry.DelegationType"
+								},
+								"typeName": {
+									"id": 23305,
+									"nodeType": "UserDefinedTypeName",
+									"pathNode": {
+										"id": 23304,
+										"name": "DelegationType",
+										"nameLocations": ["570:14:11"],
+										"nodeType": "IdentifierPath",
+										"referencedDeclaration": 23303,
+										"src": "570:14:11"
+									},
+									"referencedDeclaration": 23303,
+									"src": "570:14:11",
+									"typeDescriptions": {
+										"typeIdentifier": "t_enum$_DelegationType_$23303",
+										"typeString": "enum IDelegationRegistry.DelegationType"
+									}
+								},
+								"visibility": "internal"
+							},
+							{
+								"constant": false,
+								"id": 23308,
+								"mutability": "mutable",
+								"name": "vault",
+								"nameLocation": "608:5:11",
+								"nodeType": "VariableDeclaration",
+								"scope": 23313,
+								"src": "600:13:11",
+								"stateVariable": false,
+								"storageLocation": "default",
+								"typeDescriptions": {
+									"typeIdentifier": "t_address",
+									"typeString": "address"
+								},
+								"typeName": {
+									"id": 23307,
+									"name": "address",
+									"nodeType": "ElementaryTypeName",
+									"src": "600:7:11",
+									"stateMutability": "nonpayable",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									}
+								},
+								"visibility": "internal"
+							},
+							{
+								"constant": false,
+								"id": 23310,
+								"mutability": "mutable",
+								"name": "contract_",
+								"nameLocation": "631:9:11",
+								"nodeType": "VariableDeclaration",
+								"scope": 23313,
+								"src": "623:17:11",
+								"stateVariable": false,
+								"storageLocation": "default",
+								"typeDescriptions": {
+									"typeIdentifier": "t_address",
+									"typeString": "address"
+								},
+								"typeName": {
+									"id": 23309,
+									"name": "address",
+									"nodeType": "ElementaryTypeName",
+									"src": "623:7:11",
+									"stateMutability": "nonpayable",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									}
+								},
+								"visibility": "internal"
+							},
+							{
+								"constant": false,
+								"id": 23312,
+								"mutability": "mutable",
+								"name": "tokenId",
+								"nameLocation": "658:7:11",
+								"nodeType": "VariableDeclaration",
+								"scope": 23313,
+								"src": "650:15:11",
+								"stateVariable": false,
+								"storageLocation": "default",
+								"typeDescriptions": {
+									"typeIdentifier": "t_uint256",
+									"typeString": "uint256"
+								},
+								"typeName": {
+									"id": 23311,
+									"name": "uint256",
+									"nodeType": "ElementaryTypeName",
+									"src": "650:7:11",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									}
+								},
+								"visibility": "internal"
+							}
+						],
+						"name": "DelegationInfo",
+						"nameLocation": "545:14:11",
+						"scope": 23484,
+						"visibility": "public"
+					},
+					{
+						"id": 23322,
+						"nodeType": "EventDefinition",
+						"src": "744:66:11",
+						"anonymous": false,
+						"documentation": {
+							"id": 23314,
+							"nodeType": "StructuredDocumentation",
+							"src": "678:61:11",
+							"text": "@notice Emitted when a user delegates their entire wallet"
+						},
+						"eventSelector": "58781eab4a0743ab1c285a238be846a235f06cdb5b968030573a635e5f8c92fa",
+						"name": "DelegateForAll",
+						"nameLocation": "750:14:11",
+						"parameters": {
+							"id": 23321,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23316,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "773:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23322,
+									"src": "765:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23315,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "765:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23318,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "788:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23322,
+									"src": "780:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23317,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "780:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23320,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "value",
+									"nameLocation": "803:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23322,
+									"src": "798:10:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23319,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "798:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "764:45:11"
+						}
+					},
+					{
+						"id": 23333,
+						"nodeType": "EventDefinition",
+						"src": "886:90:11",
+						"anonymous": false,
+						"documentation": {
+							"id": 23323,
+							"nodeType": "StructuredDocumentation",
+							"src": "820:61:11",
+							"text": "@notice Emitted when a user delegates a specific contract"
+						},
+						"eventSelector": "8d6b2f5255b8d815cc368855b2251146e003bf4e2fcccaec66145fff5c174b4f",
+						"name": "DelegateForContract",
+						"nameLocation": "892:19:11",
+						"parameters": {
+							"id": 23332,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23325,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "920:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23333,
+									"src": "912:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23324,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "912:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23327,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "935:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23333,
+									"src": "927:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23326,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "927:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23329,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "contract_",
+									"nameLocation": "953:9:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23333,
+									"src": "945:17:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23328,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "945:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23331,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "value",
+									"nameLocation": "969:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23333,
+									"src": "964:10:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23330,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "964:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "911:64:11"
+						}
+					},
+					{
+						"id": 23346,
+						"nodeType": "EventDefinition",
+						"src": "1045:104:11",
+						"anonymous": false,
+						"documentation": {
+							"id": 23334,
+							"nodeType": "StructuredDocumentation",
+							"src": "982:58:11",
+							"text": "@notice Emitted when a user delegates a specific token"
+						},
+						"eventSelector": "e89c6ba1e8957285aed22618f52aa1dcb9d5bb64e1533d8b55136c72fcf5aa5d",
+						"name": "DelegateForToken",
+						"nameLocation": "1051:16:11",
+						"parameters": {
+							"id": 23345,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23336,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "1076:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23346,
+									"src": "1068:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23335,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "1068:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23338,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "1091:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23346,
+									"src": "1083:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23337,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "1083:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23340,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "contract_",
+									"nameLocation": "1109:9:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23346,
+									"src": "1101:17:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23339,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "1101:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23342,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "tokenId",
+									"nameLocation": "1128:7:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23346,
+									"src": "1120:15:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 23341,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "1120:7:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23344,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "value",
+									"nameLocation": "1142:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23346,
+									"src": "1137:10:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23343,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "1137:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "1067:81:11"
+						}
+					},
+					{
+						"id": 23351,
+						"nodeType": "EventDefinition",
+						"src": "1215:40:11",
+						"anonymous": false,
+						"documentation": {
+							"id": 23347,
+							"nodeType": "StructuredDocumentation",
+							"src": "1155:55:11",
+							"text": "@notice Emitted when a user revokes all delegations"
+						},
+						"eventSelector": "32d74befd0b842e19694e3e3af46263e18bcce41352c8b600ff0002b49edf662",
+						"name": "RevokeAllDelegates",
+						"nameLocation": "1221:18:11",
+						"parameters": {
+							"id": 23350,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23349,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "1248:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23351,
+									"src": "1240:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23348,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "1240:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "1239:15:11"
+						}
+					},
+					{
+						"id": 23358,
+						"nodeType": "EventDefinition",
+						"src": "1341:54:11",
+						"anonymous": false,
+						"documentation": {
+							"id": 23352,
+							"nodeType": "StructuredDocumentation",
+							"src": "1261:75:11",
+							"text": "@notice Emitted when a user revoes all delegations for a given delegate"
+						},
+						"eventSelector": "3e34a3ee53064fb79c0ee57448f03774a627a9270b0c41286efb7d8e32dcde93",
+						"name": "RevokeDelegate",
+						"nameLocation": "1347:14:11",
+						"parameters": {
+							"id": 23357,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23354,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "1370:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23358,
+									"src": "1362:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23353,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "1362:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23356,
+									"indexed": false,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "1385:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23358,
+									"src": "1377:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23355,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "1377:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "1361:33:11"
+						}
+					},
+					{
+						"id": 23366,
+						"nodeType": "FunctionDefinition",
+						"src": "1712:63:11",
+						"documentation": {
+							"id": 23359,
+							"nodeType": "StructuredDocumentation",
+							"src": "1444:263:11",
+							"text": " @notice Allow the delegate to act on your behalf for all contracts\n @param delegate The hotwallet to act on your behalf\n @param value Whether to enable or disable delegation for this address, true for setting and false for revoking"
+						},
+						"functionSelector": "685ee3e8",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "delegateForAll",
+						"nameLocation": "1721:14:11",
+						"parameters": {
+							"id": 23364,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23361,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "1744:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23366,
+									"src": "1736:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23360,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "1736:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23363,
+									"mutability": "mutable",
+									"name": "value",
+									"nameLocation": "1759:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23366,
+									"src": "1754:10:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23362,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "1754:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "1735:30:11"
+						},
+						"returnParameters": {
+							"id": 23365,
+							"nodeType": "ParameterList",
+							"parameters": [],
+							"src": "1774:0:11"
+						},
+						"scope": 23484,
+						"stateMutability": "nonpayable",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23376,
+						"nodeType": "FunctionDefinition",
+						"src": "2126:87:11",
+						"documentation": {
+							"id": 23367,
+							"nodeType": "StructuredDocumentation",
+							"src": "1781:340:11",
+							"text": " @notice Allow the delegate to act on your behalf for a specific contract\n @param delegate The hotwallet to act on your behalf\n @param contract_ The address for the contract you're delegating\n @param value Whether to enable or disable delegation for this address, true for setting and false for revoking"
+						},
+						"functionSelector": "49c95d29",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "delegateForContract",
+						"nameLocation": "2135:19:11",
+						"parameters": {
+							"id": 23374,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23369,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "2163:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23376,
+									"src": "2155:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23368,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "2155:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23371,
+									"mutability": "mutable",
+									"name": "contract_",
+									"nameLocation": "2181:9:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23376,
+									"src": "2173:17:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23370,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "2173:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23373,
+									"mutability": "mutable",
+									"name": "value",
+									"nameLocation": "2197:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23376,
+									"src": "2192:10:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23372,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "2192:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "2154:49:11"
+						},
+						"returnParameters": {
+							"id": 23375,
+							"nodeType": "ParameterList",
+							"parameters": [],
+							"src": "2212:0:11"
+						},
+						"scope": 23484,
+						"stateMutability": "nonpayable",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23388,
+						"nodeType": "FunctionDefinition",
+						"src": "2651:101:11",
+						"documentation": {
+							"id": 23377,
+							"nodeType": "StructuredDocumentation",
+							"src": "2219:427:11",
+							"text": " @notice Allow the delegate to act on your behalf for a specific token, supports 721 and 1155\n @param delegate The hotwallet to act on your behalf\n @param contract_ The address for the contract you're delegating\n @param tokenId The token id for the token you're delegating\n @param value Whether to enable or disable delegation for this address, true for setting and false for revoking"
+						},
+						"functionSelector": "537a5c3d",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "delegateForToken",
+						"nameLocation": "2660:16:11",
+						"parameters": {
+							"id": 23386,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23379,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "2685:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23388,
+									"src": "2677:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23378,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "2677:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23381,
+									"mutability": "mutable",
+									"name": "contract_",
+									"nameLocation": "2703:9:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23388,
+									"src": "2695:17:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23380,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "2695:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23383,
+									"mutability": "mutable",
+									"name": "tokenId",
+									"nameLocation": "2722:7:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23388,
+									"src": "2714:15:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 23382,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "2714:7:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23385,
+									"mutability": "mutable",
+									"name": "value",
+									"nameLocation": "2736:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23388,
+									"src": "2731:10:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23384,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "2731:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "2676:66:11"
+						},
+						"returnParameters": {
+							"id": 23387,
+							"nodeType": "ParameterList",
+							"parameters": [],
+							"src": "2751:0:11"
+						},
+						"scope": 23484,
+						"stateMutability": "nonpayable",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23392,
+						"nodeType": "FunctionDefinition",
+						"src": "2810:39:11",
+						"documentation": {
+							"id": 23389,
+							"nodeType": "StructuredDocumentation",
+							"src": "2758:47:11",
+							"text": " @notice Revoke all delegates"
+						},
+						"functionSelector": "36137872",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "revokeAllDelegates",
+						"nameLocation": "2819:18:11",
+						"parameters": {
+							"id": 23390,
+							"nodeType": "ParameterList",
+							"parameters": [],
+							"src": "2837:2:11"
+						},
+						"returnParameters": {
+							"id": 23391,
+							"nodeType": "ParameterList",
+							"parameters": [],
+							"src": "2848:0:11"
+						},
+						"scope": 23484,
+						"stateMutability": "nonpayable",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23398,
+						"nodeType": "FunctionDefinition",
+						"src": "2986:51:11",
+						"documentation": {
+							"id": 23393,
+							"nodeType": "StructuredDocumentation",
+							"src": "2855:126:11",
+							"text": " @notice Revoke a specific delegate for all their permissions\n @param delegate The hotwallet to revoke"
+						},
+						"functionSelector": "fa352c00",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "revokeDelegate",
+						"nameLocation": "2995:14:11",
+						"parameters": {
+							"id": 23396,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23395,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "3018:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23398,
+									"src": "3010:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23394,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "3010:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "3009:18:11"
+						},
+						"returnParameters": {
+							"id": 23397,
+							"nodeType": "ParameterList",
+							"parameters": [],
+							"src": "3036:0:11"
+						},
+						"scope": 23484,
+						"stateMutability": "nonpayable",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23404,
+						"nodeType": "FunctionDefinition",
+						"src": "3212:44:11",
+						"documentation": {
+							"id": 23399,
+							"nodeType": "StructuredDocumentation",
+							"src": "3043:164:11",
+							"text": " @notice Remove yourself as a delegate for a specific vault\n @param vault The vault which delegated to the msg.sender, and should be removed"
+						},
+						"functionSelector": "219044b0",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "revokeSelf",
+						"nameLocation": "3221:10:11",
+						"parameters": {
+							"id": 23402,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23401,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "3240:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23404,
+									"src": "3232:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23400,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "3232:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "3231:15:11"
+						},
+						"returnParameters": {
+							"id": 23403,
+							"nodeType": "ParameterList",
+							"parameters": [],
+							"src": "3255:0:11"
+						},
+						"scope": 23484,
+						"stateMutability": "nonpayable",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23414,
+						"nodeType": "FunctionDefinition",
+						"src": "3549:100:11",
+						"documentation": {
+							"id": 23405,
+							"nodeType": "StructuredDocumentation",
+							"src": "3304:240:11",
+							"text": " @notice Returns all active delegations a given delegate is able to claim on behalf of\n @param delegate The delegate that you would like to retrieve delegations for\n @return info Array of DelegationInfo structs"
+						},
+						"functionSelector": "4fc69282",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "getDelegationsByDelegate",
+						"nameLocation": "3558:24:11",
+						"parameters": {
+							"id": 23408,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23407,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "3591:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23414,
+									"src": "3583:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23406,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "3583:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "3582:18:11"
+						},
+						"returnParameters": {
+							"id": 23413,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23412,
+									"mutability": "mutable",
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "VariableDeclaration",
+									"scope": 23414,
+									"src": "3624:23:11",
+									"stateVariable": false,
+									"storageLocation": "memory",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_struct$_DelegationInfo_$23313_memory_ptr_$dyn_memory_ptr",
+										"typeString": "struct IDelegationRegistry.DelegationInfo[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 23410,
+											"nodeType": "UserDefinedTypeName",
+											"pathNode": {
+												"id": 23409,
+												"name": "DelegationInfo",
+												"nameLocations": ["3624:14:11"],
+												"nodeType": "IdentifierPath",
+												"referencedDeclaration": 23313,
+												"src": "3624:14:11"
+											},
+											"referencedDeclaration": 23313,
+											"src": "3624:14:11",
+											"typeDescriptions": {
+												"typeIdentifier": "t_struct$_DelegationInfo_$23313_storage_ptr",
+												"typeString": "struct IDelegationRegistry.DelegationInfo"
+											}
+										},
+										"id": 23411,
+										"nodeType": "ArrayTypeName",
+										"src": "3624:16:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_struct$_DelegationInfo_$23313_storage_$dyn_storage_ptr",
+											"typeString": "struct IDelegationRegistry.DelegationInfo[]"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "3623:25:11"
+						},
+						"scope": 23484,
+						"stateMutability": "view",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23423,
+						"nodeType": "FunctionDefinition",
+						"src": "3883:84:11",
+						"documentation": {
+							"id": 23415,
+							"nodeType": "StructuredDocumentation",
+							"src": "3655:223:11",
+							"text": " @notice Returns an array of wallet-level delegates for a given vault\n @param vault The cold wallet who issued the delegation\n @return addresses Array of wallet-level delegates for a given vault"
+						},
+						"functionSelector": "1b61f675",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "getDelegatesForAll",
+						"nameLocation": "3892:18:11",
+						"parameters": {
+							"id": 23418,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23417,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "3919:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23423,
+									"src": "3911:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23416,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "3911:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "3910:15:11"
+						},
+						"returnParameters": {
+							"id": 23422,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23421,
+									"mutability": "mutable",
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "VariableDeclaration",
+									"scope": 23423,
+									"src": "3949:16:11",
+									"stateVariable": false,
+									"storageLocation": "memory",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+										"typeString": "address[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 23419,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "3949:7:11",
+											"stateMutability": "nonpayable",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"id": 23420,
+										"nodeType": "ArrayTypeName",
+										"src": "3949:9:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+											"typeString": "address[]"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "3948:18:11"
+						},
+						"scope": 23484,
+						"stateMutability": "view",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23434,
+						"nodeType": "FunctionDefinition",
+						"src": "4303:108:11",
+						"documentation": {
+							"id": 23424,
+							"nodeType": "StructuredDocumentation",
+							"src": "3973:325:11",
+							"text": " @notice Returns an array of contract-level delegates for a given vault and contract\n @param vault The cold wallet who issued the delegation\n @param contract_ The address for the contract you're delegating\n @return addresses Array of contract-level delegates for a given vault and contract"
+						},
+						"functionSelector": "ed4b878e",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "getDelegatesForContract",
+						"nameLocation": "4312:23:11",
+						"parameters": {
+							"id": 23429,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23426,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "4344:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23434,
+									"src": "4336:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23425,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "4336:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23428,
+									"mutability": "mutable",
+									"name": "contract_",
+									"nameLocation": "4359:9:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23434,
+									"src": "4351:17:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23427,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "4351:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "4335:34:11"
+						},
+						"returnParameters": {
+							"id": 23433,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23432,
+									"mutability": "mutable",
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "VariableDeclaration",
+									"scope": 23434,
+									"src": "4393:16:11",
+									"stateVariable": false,
+									"storageLocation": "memory",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+										"typeString": "address[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 23430,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "4393:7:11",
+											"stateMutability": "nonpayable",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"id": 23431,
+										"nodeType": "ArrayTypeName",
+										"src": "4393:9:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+											"typeString": "address[]"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "4392:18:11"
+						},
+						"scope": 23484,
+						"stateMutability": "view",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23447,
+						"nodeType": "FunctionDefinition",
+						"src": "4804:122:11",
+						"documentation": {
+							"id": 23435,
+							"nodeType": "StructuredDocumentation",
+							"src": "4417:382:11",
+							"text": " @notice Returns an array of contract-level delegates for a given vault's token\n @param vault The cold wallet who issued the delegation\n @param contract_ The address for the contract holding the token\n @param tokenId The token id for the token you're delegating\n @return addresses Array of contract-level delegates for a given vault's token"
+						},
+						"functionSelector": "1221156b",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "getDelegatesForToken",
+						"nameLocation": "4813:20:11",
+						"parameters": {
+							"id": 23442,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23437,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "4842:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23447,
+									"src": "4834:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23436,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "4834:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23439,
+									"mutability": "mutable",
+									"name": "contract_",
+									"nameLocation": "4857:9:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23447,
+									"src": "4849:17:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23438,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "4849:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23441,
+									"mutability": "mutable",
+									"name": "tokenId",
+									"nameLocation": "4876:7:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23447,
+									"src": "4868:15:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 23440,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "4868:7:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "4833:51:11"
+						},
+						"returnParameters": {
+							"id": 23446,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23445,
+									"mutability": "mutable",
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "VariableDeclaration",
+									"scope": 23447,
+									"src": "4908:16:11",
+									"stateVariable": false,
+									"storageLocation": "memory",
+									"typeDescriptions": {
+										"typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+										"typeString": "address[]"
+									},
+									"typeName": {
+										"baseType": {
+											"id": 23443,
+											"name": "address",
+											"nodeType": "ElementaryTypeName",
+											"src": "4908:7:11",
+											"stateMutability": "nonpayable",
+											"typeDescriptions": {
+												"typeIdentifier": "t_address",
+												"typeString": "address"
+											}
+										},
+										"id": 23444,
+										"nodeType": "ArrayTypeName",
+										"src": "4908:9:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+											"typeString": "address[]"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "4907:18:11"
+						},
+						"scope": 23484,
+						"stateMutability": "view",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23457,
+						"nodeType": "FunctionDefinition",
+						"src": "5163:91:11",
+						"documentation": {
+							"id": 23448,
+							"nodeType": "StructuredDocumentation",
+							"src": "4932:226:11",
+							"text": " @notice Returns true if the address is delegated to act on your behalf for all tokens\n @param delegate The hotwallet to act on your behalf\n @param vault The cold wallet who issued the delegation"
+						},
+						"functionSelector": "9c395bc2",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "checkDelegateForAll",
+						"nameLocation": "5172:19:11",
+						"parameters": {
+							"id": 23453,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23450,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "5200:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23457,
+									"src": "5192:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23449,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "5192:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23452,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "5218:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23457,
+									"src": "5210:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23451,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "5210:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "5191:33:11"
+						},
+						"returnParameters": {
+							"id": 23456,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23455,
+									"mutability": "mutable",
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "VariableDeclaration",
+									"scope": 23457,
+									"src": "5248:4:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23454,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "5248:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "5247:6:11"
+						},
+						"scope": 23484,
+						"stateMutability": "view",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23469,
+						"nodeType": "FunctionDefinition",
+						"src": "5569:115:11",
+						"documentation": {
+							"id": 23458,
+							"nodeType": "StructuredDocumentation",
+							"src": "5260:303:11",
+							"text": " @notice Returns true if the address is delegated to act on your behalf for a token contract\n @param delegate The hotwallet to act on your behalf\n @param contract_ The address for the contract you're delegating\n @param vault The cold wallet who issued the delegation"
+						},
+						"functionSelector": "90c9a2d0",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "checkDelegateForContract",
+						"nameLocation": "5578:24:11",
+						"parameters": {
+							"id": 23465,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23460,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "5611:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23469,
+									"src": "5603:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23459,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "5603:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23462,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "5629:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23469,
+									"src": "5621:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23461,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "5621:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23464,
+									"mutability": "mutable",
+									"name": "contract_",
+									"nameLocation": "5644:9:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23469,
+									"src": "5636:17:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23463,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "5636:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "5602:52:11"
+						},
+						"returnParameters": {
+							"id": 23468,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23467,
+									"mutability": "mutable",
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "VariableDeclaration",
+									"scope": 23469,
+									"src": "5678:4:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23466,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "5678:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "5677:6:11"
+						},
+						"scope": 23484,
+						"stateMutability": "view",
+						"virtual": false,
+						"visibility": "external"
+					},
+					{
+						"id": 23483,
+						"nodeType": "FunctionDefinition",
+						"src": "6070:129:11",
+						"documentation": {
+							"id": 23470,
+							"nodeType": "StructuredDocumentation",
+							"src": "5694:371:11",
+							"text": " @notice Returns true if the address is delegated to act on your behalf for an specific token\n @param delegate The hotwallet to act on your behalf\n @param contract_ The address for the contract you're delegating\n @param tokenId The token id for the token you're delegating\n @param vault The cold wallet who issued the delegation"
+						},
+						"functionSelector": "aba69cf8",
+						"implemented": false,
+						"kind": "function",
+						"modifiers": [],
+						"name": "checkDelegateForToken",
+						"nameLocation": "6079:21:11",
+						"parameters": {
+							"id": 23479,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23472,
+									"mutability": "mutable",
+									"name": "delegate",
+									"nameLocation": "6109:8:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23483,
+									"src": "6101:16:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23471,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "6101:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23474,
+									"mutability": "mutable",
+									"name": "vault",
+									"nameLocation": "6127:5:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23483,
+									"src": "6119:13:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23473,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "6119:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23476,
+									"mutability": "mutable",
+									"name": "contract_",
+									"nameLocation": "6142:9:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23483,
+									"src": "6134:17:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_address",
+										"typeString": "address"
+									},
+									"typeName": {
+										"id": 23475,
+										"name": "address",
+										"nodeType": "ElementaryTypeName",
+										"src": "6134:7:11",
+										"stateMutability": "nonpayable",
+										"typeDescriptions": {
+											"typeIdentifier": "t_address",
+											"typeString": "address"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 23478,
+									"mutability": "mutable",
+									"name": "tokenId",
+									"nameLocation": "6161:7:11",
+									"nodeType": "VariableDeclaration",
+									"scope": 23483,
+									"src": "6153:15:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 23477,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "6153:7:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "6100:69:11"
+						},
+						"returnParameters": {
+							"id": 23482,
+							"nodeType": "ParameterList",
+							"parameters": [
+								{
+									"constant": false,
+									"id": 23481,
+									"mutability": "mutable",
+									"name": "",
+									"nameLocation": "-1:-1:-1",
+									"nodeType": "VariableDeclaration",
+									"scope": 23483,
+									"src": "6193:4:11",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 23480,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "6193:4:11",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"src": "6192:6:11"
+						},
+						"scope": 23484,
+						"stateMutability": "view",
+						"virtual": false,
+						"visibility": "external"
+					}
+				],
+				"abstract": false,
+				"baseContracts": [],
+				"canonicalName": "IDelegationRegistry",
+				"contractDependencies": [],
+				"contractKind": "interface",
+				"documentation": {
+					"id": 23298,
+					"nodeType": "StructuredDocumentation",
+					"src": "58:241:11",
+					"text": " @title An immutable registry contract to be deployed as a standalone primitive\n @dev New project launches can read previous cold wallet -> hot wallet delegations \nfrom here and integrate those permissions into their flow"
+				},
+				"fullyImplemented": false,
+				"linearizedBaseContracts": [23484],
+				"name": "IDelegationRegistry",
+				"nameLocation": "310:19:11",
+				"scope": 23485,
+				"usedErrors": []
+			}
+		],
+		"license": "MIT"
+	},
+	"id": 11
+}
