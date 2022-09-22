@@ -1,0 +1,12 @@
+{
+	"trailingComma": "none",
+	"useTabs": true,
+	"tabWidth": 2,
+	"semi": true,
+	"printWidth": 100,
+	"singleQuote": true,
+	"bracketSpacing": true,
+	"pluginSearchDirs": ["."],
+	"svelteIndentScriptAndStyle": false,
+	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
+}
