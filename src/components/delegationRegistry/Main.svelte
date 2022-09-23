@@ -33,7 +33,7 @@ $: outerWidth = 0;
 <main class="container">
 	<Card
 		shadow="left"
-		header="DÊLEGATE"
+		header="DELEGATE"
 		navOptions={delegateNavOptions}
 		bind:selectedTab={selectedDelegateTab}
 	>
@@ -43,7 +43,7 @@ $: outerWidth = 0;
 
 	<Card
 		shadow={outerWidth > 1495 ? 'right' : 'left'}
-		header="REVƠKE"
+		header="REVOKE"
 		bind:selectedTab={selectedRevokeTab}
 		navOptions={revokeNavOptions}
 	>

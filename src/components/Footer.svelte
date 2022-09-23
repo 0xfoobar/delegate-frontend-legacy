@@ -11,7 +11,7 @@ import Github from '../assets/icons/github.svg';
 	<div class="right">
 		<div
 			class="github"
-			on:click={() => window.open('https://github.com/0xnook/token-delegation-interface', '_blank')}
+			on:click={() => window.open('https://github.com/0xfoobar/delegate-cash-frontend', '_blank')}
 		>
 			<Github fill="currentColor" width="2rem" />
 		</div>
