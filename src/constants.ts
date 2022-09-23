@@ -5,21 +5,22 @@ interface ContractAddress {
 // for prompting user to switch changes via header select
 export const chainOptions: Record<string, string> = {
 	1: 'Ethereum',
-	137: 'Polygon'
+	137: 'Polygon',
+	5: 'Goerli'
 };
 
 export const contractAddresses: Record<number | string, ContractAddress> = {
 	// eth main chain
 	1: {
-		delegationRegistry: '0x00000000b1BBFe1BF5C5934c4bb9c30FEF15E57A'
+		delegationRegistry: '0x00000000000076A84feF008CDAbe6409d2FE638B'
 	},
 	// polygon
 	137: {
-		delegationRegistry: '0x00000000b1BBFe1BF5C5934c4bb9c30FEF15E57A'
+		delegationRegistry: '0x00000000000076A84feF008CDAbe6409d2FE638B'
 	},
 	// goerli
 	5: {
-		delegationRegistry: '0x00000000b1BBFe1BF5C5934c4bb9c30FEF15E57A'
+		delegationRegistry: '0x00000000000076A84feF008CDAbe6409d2FE638B'
 	},
 	// local node
 	1337: {
