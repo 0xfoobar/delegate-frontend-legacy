@@ -6,7 +6,7 @@ export let selected = options[0].key;
 <nav>
 	<ul>
 		{#each options as option}
-			<li class:selected={selected === option.key} on:click={() => (selected = option.key)}>
+			<li data-tooltip={option.tooltip} class:selected={selected === option.key} on:click={() => (selected = option.key)}>
 				{option.value}
 			</li>
 		{/each}

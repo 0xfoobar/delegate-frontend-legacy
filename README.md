@@ -1,6 +1,6 @@
 # delegate-cash-frontend
 
-An interface for [EIP-5636: Delegation Registry](https://eips.ethereum.org/EIPS/eip-5639), with source code available at [0xfoobar/token-delegation](https://github.com/0xfoobar/token-delegation),
+An interface for [EIP-5639: Delegation Registry](https://eips.ethereum.org/EIPS/eip-5639), with source code available at [0xfoobar/token-delegation](https://github.com/0xfoobar/token-delegation),
 
 Built with [svelte-kit](https://svelte.dev/), [ethers](https://ethers.io/#!/app-link/welcome.ethers.space/) and [svelte-ethers-store](https://gitlab.com/clb1/svelte-ethers-store).
 
