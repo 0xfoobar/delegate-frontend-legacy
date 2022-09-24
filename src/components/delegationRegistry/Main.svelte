@@ -11,19 +11,43 @@ let selectedRevokeTab: RevokeKind = 'wallet';
 const delegateNavOptions = [
 	{
 		key: 'wallet',
-		value: 'Wallet'
+		value: 'Wallet',
+		tooltip: 'Allow the delegate to act on your behalf for all assets in your wallet'
 	},
 	{
 		key: 'contract',
-		value: 'Contract'
+		value: 'Contract',
+		tooltip: 'Allow the delegate to act on your behalf for a specific contract'
 	},
 	{
 		key: 'token',
-		value: 'NFT'
+		value: 'NFT',
+		tooltip: 'Allow the delegate to act on your behalf for a specific NFT/token'
 	}
 ];
 
-const revokeNavOptions = [...delegateNavOptions, { key: 'other', value: 'Other' }];
+const revokeNavOptions = [
+	{
+		key: 'wallet',
+		value: 'Wallet',
+		tooltip: 'Revoke previously set wallet delegates'
+	},
+	{
+		key: 'contract',
+		value: 'Contract',
+		tooltip: 'Revoke previously set contract delegates'
+	},
+	{
+		key: 'token',
+		value: 'NFT',
+		tooltip: 'Revoke previously set NFT/token delegates'
+	}, 
+	{
+		key: 'other',
+		value: 'Other',
+		tooltip: 'Revoke all delegates or revoke yourself from a vault'
+	}, 
+];
 
 $: outerWidth = 0;
 </script>

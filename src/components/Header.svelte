@@ -66,5 +66,9 @@ button:hover {
 		margin-top: 1rem;
 		gap: 0;
 	}
+
+	h1 {
+		font-size: 1.8rem;
+	}
 }
 </style>
