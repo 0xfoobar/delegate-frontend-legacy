@@ -1,4 +1,5 @@
 <script lang="ts">
+import { page } from '$app/stores';
 import { signerAddress, chainData, chainId } from 'svelte-ethers-store';
 import { accountModalHidden } from '../store';
 import { toShortAddress, changeNetwork } from '../utils';
@@ -8,7 +9,7 @@ import Select from './Select.svelte';
 </script>
 
 <header class="header">
-	<h1>DELEGATE.CASH</h1>
+	<h1><a href="/">{$page.routeId ? 'DELEGATE.CASH' : ''}</a></h1>
 	<div class="right">
 		{#if $chainId}
 			<Select
@@ -27,12 +28,20 @@ import Select from './Select.svelte';
 </header>
 
 <style>
+a {
+	color: inherit;
+}
+
+h1 {
+	margin-right: 0.5rem;
+}
+
 .header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 1rem 0 1rem;
+	margin: 0rem 1rem 0 1rem;
 	color: var(--outline-color);
 }
 
@@ -54,6 +63,7 @@ button:hover {
 }
 
 .right {
+	margin-top: 1rem;
 	display: inline-flex;
 	justify-content: flex-end;
 	gap: 0.5rem;
@@ -68,7 +78,7 @@ button:hover {
 	}
 
 	h1 {
-		font-size: 1.8rem;
+		font-size: 6vw;
 	}
 }
 </style>

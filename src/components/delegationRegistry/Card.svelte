@@ -1,6 +1,7 @@
 <script lang="ts">
 import NavBar from './NavBar.svelte';
 import { currentTheme } from '../../store';
+import ArrowLeft from '../../assets/icons/arrow-left.svg';
 
 export let header: string;
 export let selectedTab: RevokeKind;
@@ -10,6 +11,9 @@ export let navOptions: NavOption[];
 </script>
 
 <section class:shadow-left={shadow === 'left'} class:shadow-right={shadow === 'right'} class="card">
+	<a href="/" class="back-button">
+		<ArrowLeft width="100%" />
+	</a>
 	<h1 class="header">{header}</h1>
 
 	<div class="graphic" class:dark={$currentTheme === 'dark'}>
@@ -22,9 +26,25 @@ export let navOptions: NavOption[];
 </section>
 
 <style>
+h1 {
+	user-select: none;
+	text-align: center;
+}
+
 .card {
+	margin: 2rem auto 2rem auto;
 	border: 2px solid;
-	width: 45rem;
+	width: 40rem;
+	min-height: 45rem;
+}
+
+.back-button {
+	color: inherit;
+	display: block;
+	position: relative;
+	width: 3rem;
+	top: 1rem;
+	left: 1rem;
 }
 
 .shadow-left {
@@ -66,9 +86,9 @@ export let navOptions: NavOption[];
 	filter: invert(1) contrast(65%) brightness(120%);
 }
 
-@media (max-width: 1495px) {
+@media (max-width: 680px) {
 	.card {
-		min-height: 45rem;
+		width: 97%;
 	}
 }
 </style>

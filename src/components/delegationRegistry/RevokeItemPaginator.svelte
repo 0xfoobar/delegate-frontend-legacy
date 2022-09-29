@@ -27,7 +27,11 @@ $: contractKey &&
 					value: delegate.delegate,
 					onClick:
 						'explorers' in $chainData
-							? () => window.open($chainData?.explorers[0]?.url + '/address/' + delegate, '_blank')
+							? () =>
+									window.open(
+										$chainData?.explorers[0]?.url + '/address/' + delegate.delegate,
+										'_blank'
+									)
 							: undefined
 				}
 			];
@@ -36,7 +40,11 @@ $: contractKey &&
 					value: delegate.contract_,
 					onClick:
 						'explorers' in $chainData
-							? () => window.open($chainData?.explorers[0]?.url + '/address/' + delegate, '_blank')
+							? () =>
+									window.open(
+										$chainData?.explorers[0]?.url + '/address/' + delegate.contract_,
+										'_blank'
+									)
 							: undefined
 				});
 			}
@@ -106,7 +114,7 @@ $: contractKey &&
 	align-items: center;
 	justify-content: space-evenly;
 	margin: auto;
-	width: 30rem;
+	width: 85%;
 	height: 100%;
 }
 
@@ -150,7 +158,7 @@ $: contractKey &&
 
 @media (max-width: 750px) {
 	.container {
-		width: 85%;
+		width: 92%;
 	}
 }
 </style>

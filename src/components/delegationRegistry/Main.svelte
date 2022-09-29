@@ -1,53 +1,8 @@
 <script lang="ts">
-import Card from './Card.svelte';
-import Delegate from './Delegate.svelte';
-import Revoke from './Revoke.svelte';
+import { currentTheme } from '../../store';
+
 import King from '../../assets/illustrations/king.svg';
 import Decapitation from '../../assets/illustrations/decapitation.svg';
-
-let selectedDelegateTab: DelegateKind = 'wallet';
-let selectedRevokeTab: RevokeKind = 'wallet';
-
-const delegateNavOptions = [
-	{
-		key: 'wallet',
-		value: 'Wallet',
-		tooltip: 'Allow the delegate to act on your behalf for all assets in your wallet'
-	},
-	{
-		key: 'contract',
-		value: 'Contract',
-		tooltip: 'Allow the delegate to act on your behalf for a specific contract'
-	},
-	{
-		key: 'token',
-		value: 'NFT',
-		tooltip: 'Allow the delegate to act on your behalf for a specific NFT/token'
-	}
-];
-
-const revokeNavOptions = [
-	{
-		key: 'wallet',
-		value: 'Wallet',
-		tooltip: 'Revoke previously set wallet delegates'
-	},
-	{
-		key: 'contract',
-		value: 'Contract',
-		tooltip: 'Revoke previously set contract delegates'
-	},
-	{
-		key: 'token',
-		value: 'NFT',
-		tooltip: 'Revoke previously set NFT/token delegates'
-	}, 
-	{
-		key: 'other',
-		value: 'Other',
-		tooltip: 'Revoke all delegates or revoke yourself from a vault'
-	}, 
-];
 
 $: outerWidth = 0;
 </script>
@@ -55,40 +10,121 @@ $: outerWidth = 0;
 <svelte:window bind:outerWidth />
 
 <main class="container">
-	<Card
-		shadow="left"
-		header="DELEGATE"
-		navOptions={delegateNavOptions}
-		bind:selectedTab={selectedDelegateTab}
-	>
-		<King width="100%" slot="illustration" />
-		<Delegate slot="content" delegateKind={selectedDelegateTab} />
-	</Card>
+	<h1>DELEGATE.CASH</h1>
+	<p>Super duper delegation registry</p>
 
-	<Card
-		shadow={outerWidth > 1495 ? 'right' : 'left'}
-		header="REVOKE"
-		bind:selectedTab={selectedRevokeTab}
-		navOptions={revokeNavOptions}
-	>
-		<Decapitation slot="illustration" height="90%" width="100%" />
-		<Revoke slot="content" revokeKind={selectedRevokeTab} />
-	</Card>
+	<section class="box-container">
+		<a href="/delegate" class="box shadow-left">
+			<figure class:dark={$currentTheme === 'dark'}>
+				<King width="90%" height="80%" />
+			</figure>
+			<div class="box-title">DELEGATE</div>
+		</a>
+
+		<a
+			href="/revoke"
+			class="box shadow-right"
+			class:shadow-left={outerWidth < 612}
+			class:shadow-right={outerWidth >= 612}
+		>
+			<figure class:dark={$currentTheme === 'dark'}>
+				<Decapitation width="80%" height="80%" />
+			</figure>
+			<div class="box-title">REVOKE</div>
+		</a>
+	</section>
 </main>
 
 <style>
 .container {
-	display: flex;
-	flex-wrap: wrap;
-	margin: auto auto 3rem;
-	gap: 3rem;
-	justify-content: center;
 	height: 100%;
+	margin: auto;
+	margin-bottom: 2rem;
+	flex: 1;
 }
 
-@media (max-width: 750px) {
-	.container {
-		width: 98%;
+p {
+	font-weight: 600;
+	margin-bottom: 3rem;
+}
+
+h1 {
+	font-size: 3.5rem;
+	margin-bottom: 0;
+	text-decoration: underline;
+}
+
+h1,
+p {
+	text-align: center;
+	user-select: none;
+}
+
+.box-container {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2rem;
+}
+
+.box {
+	display: inline-flex;
+	text-decoration: none;
+	color: var(--outline-color);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 22rem;
+	height: 22rem;
+	border: 1px solid var(--outline-color);
+	cursor: pointer;
+}
+
+figure {
+	display: inline-flex;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+}
+
+.box:hover {
+	text-decoration: underline;
+}
+
+.box-title {
+	font-size: 2.5rem;
+	font-weight: 600;
+}
+
+.shadow-left {
+	box-shadow: -1px 0px 0px var(--outline-color), -2px 2px 0px var(--outline-color),
+		-3px 3px 0px var(--outline-color), -4px 4px 0px var(--outline-color),
+		-5px 5px 0px var(--outline-color), -6px 6px 0px var(--outline-color),
+		-7px 7px 0px var(--outline-color), -8px 8px 0px var(--outline-color),
+		-9px 9px 0px var(--outline-color), -10px 10px 0px var(--outline-color),
+		-11px 11px 0px var(--outline-color), -12px 12px 0px 0px var(--outline-color);
+}
+
+.shadow-right {
+	box-shadow: 1px 1px 0px var(--outline-color), 2px 2px 0px var(--outline-color),
+		3px 3px 0px var(--outline-color), 4px 4px 0px var(--outline-color),
+		5px 5px 0px var(--outline-color), 6px 6px 0px var(--outline-color),
+		7px 7px 0px var(--outline-color), 8px 8px 0px var(--outline-color),
+		9px 9px 0px var(--outline-color), 10px 10px 0px var(--outline-color),
+		11px 11px 0px var(--outline-color), 12px 12px 0px 0px var(--outline-color);
+}
+
+.dark {
+	filter: invert(1) contrast(65%) brightness(120%);
+}
+
+@media (max-width: 500px) {
+	h1 {
+		font-size: 10vw;
+	}
+	p {
+		font-size: 4vw;
 	}
 }
 </style>
