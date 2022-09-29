@@ -65,14 +65,14 @@ function addNewDelegate() {
 
 <style>
 .container {
-	width: 30rem;
-	margin: 1rem auto;
 	display: flex;
 	flex-direction: column;
 }
 
 .inputs {
-	height: 17rem;
+	height: 16rem;
+	margin: auto;
+	width: 80%;
 }
 
 button {
@@ -80,7 +80,7 @@ button {
 	color: var(--background-color);
 	border: 2px solid var(--background-color);
 	padding: 0.2rem 1rem 0.2rem 1rem;
-	width: 30rem;
+	width: 80%;
 	height: 3rem;
 	font: inherit;
 	font-weight: bold;
@@ -102,18 +102,5 @@ button:hover {
 
 button:disabled {
 	cursor: not-allowed !important;
-}
-
-@media (max-width: 750px) {
-	.container {
-		width: 100%;
-	}
-	.inputs {
-		margin: auto;
-		width: 80%;
-	}
-	button {
-		width: 80%;
-	}
 }
 </style>

@@ -1,6 +1,4 @@
 <script lang="ts">
-import { chainData } from 'svelte-ethers-store';
-
 export let options: Record<string | number, string>;
 export let defaultValue: string;
 export let handleClickFunc: (key: string) => void;

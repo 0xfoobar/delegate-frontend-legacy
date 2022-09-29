@@ -10,6 +10,7 @@ declare namespace App {
 interface NavOption {
 	key: string;
 	value: string;
+	tooltip: string;
 }
 
 interface DelegateResponse {

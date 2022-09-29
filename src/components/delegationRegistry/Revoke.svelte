@@ -129,24 +129,24 @@ $: if ($connectedToSupportedChain && $contracts[contractKey]) {
 
 <style>
 .other-tab {
+	width: 80%;
 	display: flex;
-	width: 30rem;
 	height: 100%;
 	margin: 1rem auto;
 	flex-direction: column;
 	justify-content: space-between;
-	/* align-items: center; */
 }
+
 .revoke-self {
 	height: 17rem;
 }
 
 button {
+	width: 100%;
 	background: var(--outline-color);
 	color: var(--background-color);
 	border: 2px solid grey;
 	padding: 0.2rem 1rem 0.2rem 1rem;
-	width: 30rem;
 	height: 3rem;
 	font: inherit;
 	cursor: pointer;
@@ -187,21 +187,5 @@ button:hover {
 
 .dark {
 	filter: invert(1) contrast(50%) brightness(90%);
-}
-
-@media (max-width: 750px) {
-	.container {
-		width: 100%;
-	}
-	.other-tab {
-		width: 80%;
-	}
-	.revoke-self {
-		width: 100%;
-		margin: auto;
-	}
-	button {
-		width: 100%;
-	}
 }
 </style>
