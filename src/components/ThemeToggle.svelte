@@ -29,11 +29,13 @@ const applyTheme = () => {
 	if ($currentTheme === 'dark') {
 		setCssVars('background-color', '#333');
 		setCssVars('outline-color', '#fdfdfd');
+		setCssVars('link-color', 'pink');
 		document.body.classList.remove('light');
 		document.body.classList.add('dark');
 	} else {
 		setCssVars('background-color', '#fdfdfd');
 		setCssVars('outline-color', '#333');
+		setCssVars('link-color', 'orange');
 		document.body.classList.remove('dark');
 		document.body.classList.add('light');
 	}

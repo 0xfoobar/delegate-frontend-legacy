@@ -36,6 +36,9 @@ $: outerWidth = 0;
 </main>
 
 <style>
+a {
+	color: var(--link-color);
+}
 .container {
 	height: 100%;
 	margin: auto;
