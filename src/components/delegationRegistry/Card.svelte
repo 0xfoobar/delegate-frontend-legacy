@@ -27,6 +27,7 @@ export let navOptions: NavOption[];
 
 <style>
 h1 {
+	user-select: none;
 	text-align: center;
 }
 

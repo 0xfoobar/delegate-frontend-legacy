@@ -57,6 +57,7 @@ h1 {
 h1,
 p {
 	text-align: center;
+	user-select: none;
 }
 
 .box-container {
@@ -74,8 +75,8 @@ p {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 18rem;
-	height: 18rem;
+	width: 22rem;
+	height: 22rem;
 	border: 1px solid var(--outline-color);
 	cursor: pointer;
 }
@@ -92,7 +93,7 @@ figure {
 }
 
 .box-title {
-	font-size: 1.5rem;
+	font-size: 2.5rem;
 	font-weight: 600;
 }
 
