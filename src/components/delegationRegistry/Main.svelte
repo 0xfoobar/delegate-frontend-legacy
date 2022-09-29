@@ -11,7 +11,7 @@ $: outerWidth = 0;
 
 <main class="container">
 	<h1>DELEGATE.CASH</h1>
-	<p>Super duper delegation registry</p>
+	<p>An immutable primitive to safely claim airdrops for vaulted NFTs, <a href="https://0xfoobar.substack.com/p/delegatecash">see details here</a></p>
 
 	<section class="box-container">
 		<a href="/delegate" class="box shadow-left">
