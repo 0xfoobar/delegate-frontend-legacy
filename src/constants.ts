@@ -6,7 +6,8 @@ interface ContractAddress {
 export const chainOptions: Record<string, string> = {
 	1: 'Ethereum',
 	137: 'Polygon',
-	5: 'Goerli'
+	5: 'Goerli',
+	80001: 'Mumbai'
 };
 
 export const contractAddresses: Record<number | string, ContractAddress> = {
@@ -20,6 +21,10 @@ export const contractAddresses: Record<number | string, ContractAddress> = {
 	},
 	// goerli
 	5: {
+		delegationRegistry: '0x00000000000076A84feF008CDAbe6409d2FE638B'
+	},
+	// mumbai
+	80001: {
 		delegationRegistry: '0x00000000000076A84feF008CDAbe6409d2FE638B'
 	},
 	// local node
