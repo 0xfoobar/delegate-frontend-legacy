@@ -6,6 +6,7 @@ interface ContractAddress {
 export const chainOptions: Record<string, string> = {
 	1: 'Ethereum',
 	137: 'Polygon',
+	42220: 'Celo',
 	5: 'Goerli',
 	80001: 'Mumbai'
 };
@@ -17,6 +18,10 @@ export const contractAddresses: Record<number | string, ContractAddress> = {
 	},
 	// polygon
 	137: {
+		delegationRegistry: '0x00000000000076A84feF008CDAbe6409d2FE638B'
+	},
+	// celo
+	42220: {
 		delegationRegistry: '0x00000000000076A84feF008CDAbe6409d2FE638B'
 	},
 	// goerli
