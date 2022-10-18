@@ -86,8 +86,10 @@ export async function handleWalletConnectProvider() {
 	const wcProvider = new WalletConnectProvider({
 		rpc: {
 			1: 'https://mainnet.infura.io/v3/8583f89ad273489493f8ede94329777a',
+			137: 'https://polygon-rpc.com',
+			42220: 'https://forno.celo.org',
 			5: 'https://rpc.ankr.com/eth_goerli',
-			137: 'https://polygon-rpc.com'
+			80001: 'https://rpc.ankr.com/polygon_mumbai'
 			// ...
 		}
 	});
